@@ -1,12 +1,13 @@
 try:
     from pydantic_settings import BaseSettings
-except ImportError:  # pragma: no cover - fallback for Pydantic v1
+except ImportError:  # pragma: no cover
     from pydantic import BaseSettings  # type: ignore[attr-defined]
 
 
 class Settings(BaseSettings):
     APP_NAME: str = "Personal Finance Tracker"
-    # For dev: SQLite file; later replace with Postgres
+
+    # This will be overridden in Docker by env var
     DATABASE_URL: str = "sqlite:///./finance.db"
 
     class Config:
