@@ -2,5 +2,6 @@ fastapi
 uvicorn[standard]
 sqlalchemy
 psycopg2-binary    # for Postgres; for SQLite only, you don't need this
-pydantic
+pydantic>=2.0
+pydantic-settings
 python-dotenv

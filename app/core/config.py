@@ -1,4 +1,7 @@
-from pydantic import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:  # pragma: no cover - fallback for Pydantic v1
+    from pydantic import BaseSettings  # type: ignore[attr-defined]
 
 
 class Settings(BaseSettings):
